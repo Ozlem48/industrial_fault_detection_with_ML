@@ -25,7 +25,7 @@ Hedef değişken: **Machine Failure**
 
 Modellerin sonuçları Accuracy, Precision, Recall, F1-score ve Confusion Matrix kullanılarak değerlendirilecektir.
 
-## Kullanılan Teknolojiler
+## Kullanılacak Teknolojiler
 
 - Python
 - Pandas
