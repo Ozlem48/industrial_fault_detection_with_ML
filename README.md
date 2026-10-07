@@ -4,36 +4,74 @@
 
 Bu projede, endüstriyel ekipmanların çalışma verileri kullanılarak makine arızalarının tahmin edilmesi amaçlanmaktadır.
 
-Proje kapsamında veri analizi ve makine öğrenmesi yöntemleri kullanılarak farklı modellerin sonuçlarının karşılaştırılması planlanmaktadır.
+Makinelerin çalışma sırasında oluşturduğu sıcaklık, dönme hızı, tork ve takım aşınması gibi veriler incelenerek, makinenin arıza yapıp yapmayacağını tahmin eden makine öğrenmesi modelleri geliştirilmesi planlanmaktadır.
+
+Proje kapsamında veri setinin incelenmesi, veri analizi ve ön işleme işlemlerinin gerçekleştirilmesi, farklı makine öğrenmesi modellerinin uygulanması ve elde edilen sonuçların karşılaştırılması hedeflenmektedir.
+
+## Problem Tanımı
+
+Projede temel olarak şu soruya cevap aranacaktır:
+
+> Makinenin mevcut çalışma verilerine bakarak arıza yapıp yapmayacağını tahmin edebilir miyiz?
+
+Bu nedenle `Machine Failure` değişkeni hedef değişken olarak kullanılacaktır.
+
+- `0` → Makine arızası yok
+- `1` → Makine arızası var
+
+Proje bir **ikili sınıflandırma problemi** olarak ele alınacaktır.
 
 ## Veri Seti
 
 Projede **AI4I 2020 Predictive Maintenance Dataset** veri setinin kullanılması planlanmaktadır.
 
-Veri setinde sıcaklık, dönme hızı, tork ve takım aşınması gibi makinenin çalışma durumunu gösteren değişkenler bulunmaktadır.
+Veri seti **UCI Machine Learning Repository** üzerinden alınmıştır. Veri setinde endüstriyel makinelerin çalışma durumlarını gösteren farklı değişkenler bulunmaktadır.
 
-Hedef değişken: **Machine Failure**
+Başlıca değişkenler:
 
-- `0` → Arıza yok
-- `1` → Arıza var
+- Air Temperature
+- Process Temperature
+- Rotational Speed
+- Torque
+- Tool Wear
+- Type
 
-## Kullanılacak Yöntemler
+Veri seti öncelikle Python kullanılarak incelenecek; değişkenler, veri tipleri, eksik veriler ve verilerin dağılımları kontrol edilecektir.
+
+## Veri Analizi ve Ön İşleme
+
+Veri setindeki değişkenlerin makine arızası ile ilişkisi grafikler ve temel veri analizi yöntemleri kullanılarak incelenecektir.
+
+Gerekli veri temizleme ve ön işleme işlemlerinden sonra modelde kullanılacak değişkenler belirlenecek ve veriler eğitim/test olarak ayrılacaktır.
+
+## Kullanılacak Makine Öğrenmesi Yöntemleri
+
+Projede farklı sınıflandırma yöntemlerinin uygulanması ve sonuçlarının karşılaştırılması planlanmaktadır.
+
+İlk aşamada:
 
 - Logistic Regression
 - Decision Tree
 - Random Forest
 
-Modellerin sonuçları Accuracy, Precision, Recall, F1-score ve Confusion Matrix kullanılarak değerlendirilecektir.
+modellerinin kullanılması düşünülmektedir.
 
-## Kullanılacak Teknolojiler
+Proje ilerledikçe kullanılan veri ve elde edilen sonuçlara göre farklı modellerin eklenmesi değerlendirilebilir.
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Git / GitHub
-  
+## Model Değerlendirme
+
+Modellerin performansını değerlendirmek için aşağıdaki ölçütlerin kullanılması planlanmaktadır:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+Özellikle arızalı makinelerin ne kadarının doğru şekilde tespit edildiğini görmek için **Recall** değeri incelenecektir.
+
+Farklı modellerin sonuçları karşılaştırılarak hangi modelin ve hangi değişkenlerin tahmin sürecinde daha etkili olduğu değerlendirilecektir.
+
 ## Proje Akışı
 
 ```text
@@ -43,7 +81,9 @@ Veri Temizleme ve Ön İşleme
         ↓
 Veri Analizi
         ↓
-Eğitim / Test Verisi
+Kullanılacak Değişkenleri Belirleme
+        ↓
+Eğitim / Test Verisi Oluşturma
         ↓
 Makine Öğrenmesi Modelleri
         ↓
