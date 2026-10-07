@@ -33,3 +33,20 @@ Modellerin sonuçları Accuracy, Precision, Recall, F1-score ve Confusion Matrix
 - Matplotlib
 - Scikit-learn
 - Git / GitHub
+  
+## Proje Akışı
+
+```text
+Veri Setini İnceleme
+        ↓
+Veri Temizleme ve Ön İşleme
+        ↓
+Veri Analizi
+        ↓
+Eğitim / Test Verisi
+        ↓
+Makine Öğrenmesi Modelleri
+        ↓
+Arıza Tahmini
+        ↓
+Model Sonuçlarını Değerlendirme
