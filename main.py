@@ -65,7 +65,6 @@ print(df.isnull().sum())
 print("\nYİNELENEN SATIR SAYISI")
 print(df.duplicated().sum())
 
-# 16. Özellikleri ve hedef değişkeni ayır
 
 features = [
     "Type",
@@ -88,7 +87,6 @@ print(y.head())
 print("\nÖZELLİK BOYUTU:", X.shape)
 print("HEDEF BOYUTU:", y.shape)
 
-# 17. Kategorik değişkeni sayısal hale getir
 X_encoded = pd.get_dummies(
     X,
     columns=["Type"],
